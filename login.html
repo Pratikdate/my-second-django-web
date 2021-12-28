@@ -1,0 +1,86 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .form{
+        
+        padding:20px 16px;
+        
+       
+        border-radius:5px;
+        margin-bottom:30px;
+        box-shadow:0px 15px 20px 0px;
+        margin:20px;
+        height:400px;
+        width:
+
+    }
+    .form-input{
+        margin-left:50px;
+        border-radius:5px;
+        box-shadow:0 0px 0px 0;
+        height:40px;
+        width:280px;
+
+    }
+   
+      
+
+    
+    .value{
+        margin-top:10px;
+        
+
+    }
+    .form-text{
+        margin-bottom:20px;
+        border-radius:3px;
+        font-size:30px;
+        margin-left:80px;
+    
+    }
+    .btn-primary{
+        border-radius:4px;
+        height:40px;
+        width:90px;
+       
+        margin-top:30px;
+
+    }
+
+
+
+
+</style>
+{% endblock  %}
+
+{% block body %}
+
+<form class="form" method="POST" action="/login" >
+   {% csrf_token %} 
+    <h2 class ="form-text">Login user</h2>
+    <lable class="value" >Name     </lable><br>
+    <input class="form-input " type="text" name="username" required><br>
+    <lable class="value" >Email     </lable><br>
+    <input type="email"    class="form-input"   name="email"required><br>
+    
+    <lable class="value">Password    </lable><br>
+    <input type="password"    class="form-input"  name="password"required><br>
+    <a href="/login/change_pass" class="button px-3 mx-5 my-2">change password</a><br>
+    
+   
+    
+    
+    
+    <input type="submit" value="Login"  class="btn-primary">
+    
+    <a href= "/login/account" class="button px-0 mx-3 my-2">Creat account</a>
+    
+    <a href="/logout" class="button  my-2 ">logout</a><br>
+    
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .form{
+        height:500px;
+        width:360px;
+        margin:50px 20px;
+        padding:30px 10px;
+        box-shadow:0 4px 5px 0 rgba(0,0,0,0.3);
+        border-radius:6px;
+        
+
+    }
+    .form-in{
+        margin:0 20px;
+        border-radius:5px;
+        height:40px;
+        width:310px;
+        
+
+    }
+    .btn-primary{
+        margin:20px;
+        border-radius:5px;
+        box-shadow:0 4px 5px 0 rgba(0,0,0,0.3);
+        width:90px;
+        height:40px;
+        
+
+    }
+
+
+
+
+</style>
+{% endblock %}
+
+{% block user %}
+
+<form class="form" method="POST" action="/products/after-product/order-form">
+    <div class="form-body" >
+       {% csrf_token %} 
+       <lable>Name</lable><br>
+       <input class="form-in" name="Name" placeholder="Enter your name"><br>
+        
+
+        <lable>Email</lable><br>
+       <input class="form-in" name="Email" placeholder="Enter your Email"><br>
+
+       <lable>Phone no.</lable><br>
+       <input class="form-in" name="Phone_no" placeholder="Enter your phone number "><br>
+
+       <lable>Quantity</lable><br>
+       <input class="form-in" name="Quantity" placeholder="Enter quantity of product"><br>
+        
+
+       
+
+        <lable>Discription</lable><br>
+       <textarea class="form-in" name="Discription" placeholder="Enter your name" row="5"></textarea><br>
+       
+       
+        <button type="submit" class="btn-primary ">Order</button>
+
+
+        
+    </div>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .form{
+        border-radius:10px;
+        height:1400px;
+        width:360px;
+        padding:40px 20px;
+        box-shadow:0 4px 7px 0;
+        margin:50px 15px;
+        color:gray;
+        
+    
+    }
+
+    .form-body{
+        margin-top:30px;
+        
+    
+    }
+
+    .body-input{
+        
+        margin:7px 25px;
+        border-radius:6px;
+        height:38px;
+        width:300px;
+        
+    }
+    
+    .form-lable{
+        margin:40px 0px;
+        
+    }
+    .form-in{
+        width:300px;
+        
+        border-radius:6px;
+        margin:0px 25px;
+    
+    }
+    .btn-primary{
+        height:40px;
+        width:150px;
+        margin:50px 0px;
+        border-radius:6px;
+        
+
+    }
+    .head-text{
+        margin-bottom:10px;
+        
+
+    }
+    .img-body{
+        color:gray;
+        border-radius:6px;
+        
+
+    }
+   
+
+
+
+
+</style>
+{% endblock %}
+
+{% block user %}
+
+<form class="form" method="POST" action="/seller">  
+    
+    {% csrf_token %} 
+    <h3 calss="head-text" >Sell Your Products  on web</h3>
+    <hr/>
+    
+    
+  
+    <div class="form-body" >
+        <lable class="form-lable">Name</lable><br>
+        <input class="body-input" name="Name" type="" value="{{product.Name}}"required><br>
+
+        <lable class="form-lable">Email</lable><br>
+        <input name="Email"class="body-input" type="email"required  value="{{product.Email}}" ><br>
+        <lable class="form-lable">Phone no.</lable><br>
+        <input class="body-input" name="Phone_no"type=""required  value="{{product.Phone_no}}" ><br>
+        <lable class="form-lable">Gst no.</lable><br>
+        <input class="body-input" name="Gst_no"type="" value="{{product.Gst_no}}"><br><br>
+        <lable class="form-lable">Company name</lable>
+        <input class="body-input" name="Company_name"type=""required value="{{product.Company_name}}"><br>
+        <lable class="form-lable">Resitrer id</lable><br>
+        <input class="body-input" name="Resister_id"type="" value="{{product.Resister_id}}"><br>
+        <lable class="form-lable">Product name</lable><br>
+        <input class="body-input" name="Product_name"type=""required value="{{product.Product_name}}"><br>
+        <lable class="form-lable">Product price</lable><br>
+        <input class="body-input" name="Product_price"type=""required><br>
+        <lable class="form-lable">Product Image</lable><br>
+        <input class="img-input" name="Product_img"type="file"  accept="image/*;capture=camera"  value="{{product.Product_img}}" required><br>
+        <lable class="form-lable">Company Founder</lable><br>
+        <input class="body-input" name="Company_founder"type="" value="{{product.Company_founder}}"><br>
+        <lable class="form-lable">Company CEO</lable>
+        <input class="body-input" name="Company_ceos"type="" value="{{product.Company_ceos}}"><br>
+        <lable class="form-lable">Address</lable><br>
+        <input class="body-input" name="Address"type="" value="{{product.Address}}" ><br>
+        
+
+        <lable class="form-lable">Company logo</lable><br>
+        <input class="img-input" name="Company_logo"type="file"  accept="image/*;capture=camera"  value="{{product.Company_logo}}" ><br>
+        <lable>Discription</lable><br>
+        <textarea class="form-in" placeholder="Enter your name" name="Discription"row="7" value="{{product.Discription}}">
+        </textarea><br>
+        <button type="submit" class="btn-primary px-3 mx-1">Change save</button><br>
+       
+    </div>
+    
+    
+
+</form>
+
+
+
+{% endblock %}

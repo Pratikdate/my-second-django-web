@@ -1,0 +1,104 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .top-set{
+        box-shadow:0 4px 5px 0 rgba(0, 0, 0 ,0.3);
+        height:480px;
+        font-family:"times new roman";
+        
+        
+
+    }
+    .box-detail{
+        
+        height:90px;
+        z-index:3;
+        margin:0px 40px;
+       
+        
+
+    }
+    .com-detail{
+        margin-left:40px;
+        margin:20px ;
+
+    }
+    .address-detail{
+        margin-left:40px;
+        margin-top:0px;
+        padding-bottom:0px;
+
+    }
+    .viwe-more{
+        border-radius:5px;
+        height:30px;
+        width:350px;
+        padding-top:5px;
+        border:bold;
+        box-shadow:0 4px 5px 0;
+        text-align:center;
+        text-decoration:none;
+        
+
+    }
+    .order-form{
+        border-radius:5px;
+        height:30px;
+        width:90px;
+        padding-top:5px;
+        border:bold;
+        box-shadow:0 4px 5px 0;
+        text-align:center;
+        text-decoration:none;
+        margin-left:150px;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block product %}
+
+<div class="top-set"> 
+    <img src=" {{product.Product_img.url}}  " alt="" align="top"height="240" width="394"style="box-shaddow:0 4px 5px 0;z-index:4; " >
+    <div class="box-detail">
+        <h5>{{product.Product_name}} </h5>
+        <h6>${{product.Product_price}}</h6>
+        <p>by:{{product.Company_name}}  <a class="order-form "         type="button" href="/products/after-product/order-form"  >Order now</a>   </p>
+        
+        <hr/>
+    </div>
+    
+      <div class="com-detail">
+        
+        
+
+       <div>
+           <img src="{{product.Company_logo}}" height="35" width="35" style="border-radius:10px; margin:0 3px; margin-bottom:0px; ">
+           
+           
+        <h7> {{product.Company_name}}<a href="#"><img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP03gc-00YxgJlR2MUM4deryCDyxIPb518Dw&usqp=CAU " alt="" align="top"height="30" width="30"style="box-shaddow:0 4px 5px 0;z-index:4; margin-left:230px; box-shaddow:0 3px 3px 0;" ></a> </h7><br>
+           
+           
+           
+           
+        <h8 class="address-detail">           <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmnVNOS529zusZTsI_zYPxMoQTskR4fB6fzw&usqp=CAU " height="15" width="15" style="border-radius:10px; margin:0 0px; margin-bottom:0px; ">  {{product.Address}} </h8>
+        <p  class="address-detail" >           <img src=" https://cdn4.iconfinder.com/data/icons/e-commerce-shopping-1-1/64/E_Commrnce_and_shopping_1-06-512.png " height="15" width="15" style="border-radius:10px; margin:0 0px; margin-bottom:0px; "> {{product.Gst_no}}</p>
+         
+         
+           
+
+    </div>
+        <a class="viwe-more "         type="button" href="#"  >Viwe more
+        </a>  
+   </div>
+    
+</div>
+
+
+
+
+
+{% endblock %}

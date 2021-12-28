@@ -1,0 +1,117 @@
+
+{% extends "User_activity.html" %}
+
+
+{% block detail_style %}
+<style>
+    .top-block{
+        height:80px;
+        width:;
+        border:1px solid;
+        text-align:center;
+        padding-top:30px;
+        color:gray;
+        background-color:  #f0f8ff  ;
+    
+    }
+    .block{
+        height:20px;
+        width:;
+        margin:0px 0px;
+        
+    }
+   
+    
+     .ma3{
+        text-decoration:none;
+        font-size:15px;
+        margin:1px 20px;
+        color:black;
+         
+       }
+    .ma3{
+        text-decoration:none;
+        font-size:15px;
+        margin:1px 20px;
+        color:black;
+         position:absolute;
+        transition:box-shadow 2s;
+    }
+    .ma2{
+        text-decoration:none;
+        font-size:15px;
+        margin:1px 250px;
+        color:black;
+         position:absolute;
+         transition:0.6s;
+    }
+      .ma1{
+        text-decoration:none;
+        font-size:15px;
+        margin:1px 300px;
+        color:black;
+         position:absolute;
+         transition:0.6s;
+    }
+    table:hover{
+        box-shadow:0 5px 7px 4px;
+        
+}
+    
+    .item2{
+        margin-left:100px;
+
+    }
+     .item3{
+        margin-left:20px;
+        margin-top:0px;
+        
+
+    }
+    .table{
+        box-shadow:0 4px 7px 0;
+        width:400px;
+        height:30px;
+
+    }
+</style>
+{% endblock %}
+
+{% block detail  %}
+
+<div class="top-block">
+    <h2>Calls come from web</h2>
+    
+</div>
+
+<div class="table">
+    
+        <p class="item3"  >Product
+</p>
+        
+    
+    
+</div>
+
+
+
+
+{% for item in form %}
+<table class="block">
+    <tr>
+
+    
+    
+     
+    <a class="ma3"href="">{{item.Product_name}}</a>
+     <a class="ma2"href="">add</a>
+      <a class="ma1"href="">Change</a>  
+    </tr>
+     
+</table>
+
+
+{%  endfor %}
+{%  endblock %}
+
+    

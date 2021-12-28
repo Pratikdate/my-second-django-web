@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .my {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 2s;
+}
+
+    .my:hover {
+  width: 300px;
+}
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="my"></div>
+
+
+
+{% endblock %}

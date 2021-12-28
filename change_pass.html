@@ -1,0 +1,92 @@
+{% extends "home.html" %}
+
+
+{% block css %}
+<style>
+    .form_pass{
+        height:450px;
+        width:350px;
+        margin-right:0px;
+        margin:50px 23px;
+        padding:30px 20px;
+        border-radius:5px;
+        box-shadow:0 5px 8px 0;
+        
+        
+
+    }
+
+    .change_passbody{
+        margin-top:30px;
+        
+    
+    }
+
+    .change_input{
+        margin:4px 50px;
+        border-radius:5px;
+        height:40px;
+        width:250px;
+    }
+    .checkbox{
+        margin:20px 0;
+        height:25px;
+        width:25px;
+        
+    }
+
+    .btn-primary{
+        
+        margin:0px 0px;
+        border-radius:10px;
+        height:40px;
+        box-shadow:0 0px 0px 0;
+        width:110px;
+        background-color:  #2E76CF    ;
+        
+    }
+
+    
+
+
+
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<form class="form_pass" method="POST" action="/login/change_pass">
+    <h2 style="text-align:center;color:gray;" >Change password</h2>
+    {% csrf_token %}
+
+    <div class="change_passbody" >
+        <lable >Old password</lable>
+        <input type="password" class="change_input" placeholder="Enter your Old password" name="Old_pass" required><br>
+        <lable  >New Password</lable>
+        <input type="password" class="change_input" placeholder="New password" name="New_pass" required><br>
+        <lable >Confirm Password</lable>
+        <input type="password"class="change_input" placeholder="New password" name="Confirm_pass" required ><br>
+        
+        
+
+        
+    
+    </div>
+    <div>
+        <input type="checkbox" class="checkbox" required>
+        <lable >Chake me out</lable><br>
+
+    </div>
+    <input type="submit" class="btn-primary" value="submit">
+    
+    
+    
+</form>
+
+
+
+
+
+{% endblock %}
